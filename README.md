@@ -13,11 +13,11 @@ values in `main.tf`. Copy the example file, update values, and pass it to
 `terraform init`:
 
 ```bash
-cp backend.example.tfvars backend.tfvars
-# edit backend.tfvars and then
-terraform init -backend-config=backend.tfvars
+cp backend.example.hcl backend.hcl
+# edit backend.hcl and then
+terraform init -backend-config=backend.hcl
 ```
 
-The repository ignores `backend.tfvars` so you won't accidentally commit
-secrets or environment-specific configuration. Keep `backend.example.tfvars`
+The repository ignores `backend.hcl` so you won't accidentally commit
+secrets or environment-specific configuration. Keep `backend.example.hcl`
 committed so other contributors know what keys are required.

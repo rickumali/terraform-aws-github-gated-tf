@@ -9,9 +9,9 @@
 crash.log
 crash.*.log
 
-# Exclude the local backend override and other sensitive .tfvars files.
-# We intentionally allow committing example .tfvars files (e.g. backend.example.tfvars).
-backend.tfvars
+# Exclude the local backend override file
+# We intentionally allow committing example files (e.g. backend.example.hcl)
+backend.hcl
 *.tfvars.json
 
 # Ignore override files as they are usually used to override resources locally and so
