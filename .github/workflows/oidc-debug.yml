@@ -2,8 +2,6 @@ name: OIDC Debug
 
 on:
   push:
-    branches:
-      - main
 
 permissions:
   id-token: write
