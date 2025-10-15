@@ -1,0 +1,16 @@
+name: OIDC Debug
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  oidc-debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OIDC Debug Info
+        uses: steve-todorov/oidc-debugger-action@v1
+        with:
+          audience: '${{ github.server_url }}/${{ github.repository }}'
+        continue-on-error: true
