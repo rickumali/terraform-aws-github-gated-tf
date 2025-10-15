@@ -2,14 +2,9 @@ provider "aws" {
   region = "us-east-2"
 }
 
-terraform {
-  backend "s3" {
-    bucket       = "rickumali-terraform-state"
-    key          = "terraform-aws-github-gated-tf/terraform.tfstate"
-    region       = "us-east-2"
-    use_lockfile = true
-  }
-}
+# Backend configuration has been moved to an external file and should be provided
+# at `terraform init` time with `-backend-config=backend.tfvars`.
+# Example values are in `backend.example.tfvars`.
 
 resource "aws_budgets_budget" "zero_spend_budget" {
   name         = "ZeroSpendBudget"
