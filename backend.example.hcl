@@ -3,9 +3,10 @@
 #   cp backend.example.tfvars backend.tfvars
 #   terraform init -backend-config=backend.tfvars
 
-bucket = "rickumali-terraform-state"
-key    = "terraform-aws-github-gated-tf/terraform.tfstate"
-region = "us-east-2"
+bucket        = "${BACKEND_BUCKET}"
+key           = "${BACKEND_KEY_FILENAME}"
+region        = "${BACKEND_REGION}"
+use_lock_file = true
 # Optional: enable state locking via DynamoDB (recommended for team environments)
 # dynamodb_table = "terraform-state-locks"
 # encrypt = true
