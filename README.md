@@ -18,6 +18,14 @@ cp backend.example.hcl backend.hcl
 terraform init -backend-config=backend.hcl
 ```
 
+Alternatively, you can use bring in the values using environment variables of
+the same name, and then using `envsubst`, as follows:
+
+```bash
+envsubst < backend.example.hcl > backend.hcl
+terraform init -backend-config=backend.hcl
+```
+
 The repository ignores `backend.hcl` so you won't accidentally commit
 secrets or environment-specific configuration. Keep `backend.example.hcl`
 committed so other contributors know what keys are required.
