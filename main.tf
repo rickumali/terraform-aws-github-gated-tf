@@ -5,6 +5,9 @@ provider "aws" {
 # Backend configuration has been moved to an external file and should be provided
 # at `terraform init` time with `-backend-config=backend.tfvars`.
 # Example values are in `backend.example.tfvars`.
+terraform {
+  backend "s3" {}
+}
 
 resource "aws_budgets_budget" "zero_spend_budget" {
   name         = "ZeroSpendBudget"
