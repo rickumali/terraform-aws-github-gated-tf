@@ -1,4 +1,5 @@
 name: GitHub Actions Play 1
+run-name: "Play 1: ${{ github.sha }}"
 
 on:
     push
