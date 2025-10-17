@@ -1,0 +1,12 @@
+name: GitHub Actions Play 2
+run-name: "Play 2: ${{ github.sha }}"
+
+on:
+    workflow_dispatch
+
+jobs:
+    third-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Sound the Trumpet
+              run: echo "I'm a workflow-dispatch triggered job! 🎉"
