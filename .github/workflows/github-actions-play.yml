@@ -1,0 +1,10 @@
+name: GitHub Actions Play 1
+
+on:
+    push
+
+jobs:
+    second-job:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "😇 Hello, world!"
