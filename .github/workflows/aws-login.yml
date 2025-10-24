@@ -1,7 +1,7 @@
 name: AWS Login Test
 
 on:
-    push:
+    push
 
 permissions:
     id-token: write
@@ -12,6 +12,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Configure AWS Credentials
-              uses: aws-actions/configure-aws-credentials
+              uses: aws-actions/configure-aws-credentials@v5.1.0
               with:
                 aws-region: us-east-1
