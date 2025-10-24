@@ -1,0 +1,17 @@
+name: AWS Login Test
+
+on:
+    push:
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    aws-configure:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials
+              with:
+                aws-region: us-east-1
