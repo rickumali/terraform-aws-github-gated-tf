@@ -14,4 +14,4 @@ jobs:
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v5.1.0
               with:
-                aws-region: us-east-1
+                aws-region: ${{ vars.AWS_REGION }}
