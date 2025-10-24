@@ -1,0 +1,11 @@
+name: GitHub Actions Play 1
+run-name: "Play 1: ${{ github.sha }}"
+
+on:
+    push
+
+jobs:
+    second-job:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "😇 Hello, world!"
