@@ -1,0 +1,19 @@
+name: AWS Login Test
+
+on:
+    push
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    aws-configure:
+        name: Configure AWS Credentials
+        runs-on: ubuntu-latest
+        steps:
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@v5.1.0
+              with:
+                aws-region: ${{ vars.AWS_REGION }}
+                role-to-assume: ${{ vars.AWS_ROLE_TO_ASSUME }}
