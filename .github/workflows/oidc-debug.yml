@@ -26,6 +26,10 @@ on:
         required: true
         default: 1968
         type: number
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 
 permissions:
   id-token: write
