@@ -21,7 +21,7 @@ on:
         description: 'The so-called details'
         required: false
         type: string
-      yearborn:
+      yearBorn:
         description: 'Year Born'
         required: true
         default: 1968
