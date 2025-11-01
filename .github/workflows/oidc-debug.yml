@@ -12,6 +12,11 @@ on:
           - info
           - warning
           - debug
+      print?:
+        description: 'Print Details?'
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   id-token: write
