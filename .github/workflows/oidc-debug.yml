@@ -1,7 +1,17 @@
 name: OIDC Debug
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log Level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 
 permissions:
   id-token: write
