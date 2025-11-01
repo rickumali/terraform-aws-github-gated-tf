@@ -17,6 +17,10 @@ on:
         required: true
         default: true
         type: boolean
+      details:
+        description: 'The so-called details'
+        required: false
+        type: string
 
 permissions:
   id-token: write
