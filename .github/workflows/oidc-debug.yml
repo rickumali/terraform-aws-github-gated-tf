@@ -21,6 +21,11 @@ on:
         description: 'The so-called details'
         required: false
         type: string
+      yearborn:
+        description: 'Year Born'
+        required: true
+        default: 1968
+        type: number
 
 permissions:
   id-token: write
