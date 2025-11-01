@@ -1,7 +1,7 @@
 name: OIDC Debug
 
 on:
-  push:
+  workflow_dispatch
 
 permissions:
   id-token: write
