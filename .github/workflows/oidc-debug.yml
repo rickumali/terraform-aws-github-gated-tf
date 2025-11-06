@@ -59,3 +59,9 @@ jobs:
           echo "inputs values (array) = ${{ join(inputs.*, ', ') }}"
           echo "inputs raw:"
           echo "${{ toJson(inputs) }}"
+  talk-to-older-people:
+    runs-on: ubuntu-latest
+    if: inputs.yearBorn < 2000
+    steps:
+      - name: Say Older Greeting
+        run: echo "How does it feel to be $(( 2025 - ${{ inputs.yearBorn }}))"
