@@ -51,4 +51,4 @@ jobs:
     steps:
       - name: Print All Inputs
         run: |
-          echo "${{ inputs }}"
+          echo "inputs.yearBorn = ${{ inputs.yearBorn }}"
