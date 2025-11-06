@@ -55,4 +55,4 @@ jobs:
           echo "inputs.details = ${{ inputs.details }}"
           echo "inputs.yearBorn = ${{ inputs.yearBorn }}"
           echo "inputs.environment = ${{ inputs.environment }}"
-          echo "inputs keys = ${{ inputs.* }}"
+          echo "inputs keys = ${{ join(inputs.*, ', ') }}"
