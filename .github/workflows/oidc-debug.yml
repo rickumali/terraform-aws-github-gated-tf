@@ -52,6 +52,7 @@ jobs:
       - name: Print All Inputs
         run: |
           echo "inputs.logLevel = ${{ inputs.logLevel }}"
+          echo "inputs.print? = ${{ inputs['print?'] }}"
           echo "inputs.details = ${{ inputs.details }}"
           echo "inputs.yearBorn = ${{ inputs.yearBorn }}"
           echo "inputs.environment = ${{ inputs.environment }}"
