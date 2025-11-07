@@ -1,35 +1,7 @@
 name: OIDC Debug
 
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log Level'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-          - info
-          - warning
-          - debug
-      print?:
-        description: 'Print Details?'
-        required: true
-        default: true
-        type: boolean
-      details:
-        description: 'The so-called details'
-        required: false
-        type: string
-      yearBorn:
-        description: 'Year Born'
-        required: true
-        default: 1968
-        type: number
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: false
+  workflow_dispatch
 
 permissions:
   id-token: write
@@ -46,22 +18,3 @@ jobs:
           echo "$ID_TOKEN" | awk -F. '{print $2}' | base64 -d 2>/dev/null | jq -r
         env:
           AUDIENCE: "${{ github.server_url }}/${{ github.repository }}"
-  display-inputs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print All Inputs
-        run: |
-          echo "inputs.logLevel = ${{ inputs.logLevel }}"
-          echo "inputs.print? = ${{ inputs['print?'] }}"
-          echo "inputs.details = ${{ inputs.details }}"
-          echo "inputs.yearBorn = ${{ inputs.yearBorn }}"
-          echo "inputs.environment = ${{ inputs.environment }}"
-          echo "inputs values (array) = ${{ join(inputs.*, ', ') }}"
-          echo "inputs raw:"
-          echo "${{ toJson(inputs) }}"
-  talk-to-older-people:
-    runs-on: ubuntu-latest
-    if: inputs.yearBorn < 2000
-    steps:
-      - name: Say Older Greeting
-        run: echo "How does it feel to be $(( 2025 - ${{ inputs.yearBorn }}))"
